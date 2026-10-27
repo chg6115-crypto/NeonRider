@@ -5,7 +5,7 @@ using TMPro;
 /// <summary>
 /// 홀로그램 HUD (월드 스페이스 캔버스). 탑승 중(기본: 1인칭일 때만) 표시.
 /// - LEAN: 원호 위 하얀 바늘이 기울기만큼 회전 + "LEAN 12° R" 글자
-/// - 속도: 큰 숫자 + 아래 9-slice 바 (가로 길이로 표시)
+/// - 속도: 큰 숫자 + 눈금 바 (5km/h 단위 칸, 이미지 Filled로 표시)
 /// - 상태 색: 평소 하늘색 / BOOST 분홍 / BRAKE 빨강 (tintTargets에만 적용, 바늘·숫자는 흰색 유지)
 /// - 홀로그램 효과: 켜질 때 세로로 펼쳐지며 깜빡임, 미세 깜빡임/흔들림
 /// </summary>
@@ -23,11 +23,25 @@ public class HoloHUD : MonoBehaviour
     [SerializeField] TMP_Text unitText;                   // (구버전 호환) 비워도 됨
     [Tooltip("속도 숫자 뒤에 붙는 단위 (TMP 리치텍스트)")]
     [SerializeField] string unitSuffix = "<size=34%><color=#5CF2FF> km/h</color></size>";
-    [SerializeField] RectTransform speedBarFill;          // 9-slice 채움 (부모 폭 기준 비율로 길이 조절)
-    [SerializeField] RectTransform speedBarFillGlow;
+    [SerializeField] RectTransform speedBarFill;          // (구버전) 9-slice 채움, 비워도 됨
+    [SerializeField] RectTransform speedBarFillGlow;      // (구버전) 비워도 됨
     [Tooltip("9-slice 양 끝이 찌그러지지 않는 최소 폭 (캔버스 px)")]
     [SerializeField] float barMinWidth = 58f;
     [SerializeField] Image speedBar;                      // (구버전 호환) Filled Image, 비워도 됨
+
+    [Header("Speed Segments (눈금 바)")]
+    [Tooltip("HUD_SpeedBar_Fill 이미지 (Image Type: Filled / Horizontal / Left)")]
+    [SerializeField] Image segmentFill;
+    [Tooltip("이미지에 그려진 칸 수 (HUD_SpeedBar_Fill = 20)")]
+    [SerializeField] int segmentCount = 20;
+    [Tooltip("한 칸이 나타내는 속도")]
+    [SerializeField] float kmhPerSegment = 5f;
+    [Tooltip("이미지 기준 첫 칸 시작 위치 (0~1). PNG를 바꾸지 않으면 그대로 둘 것")]
+    [SerializeField] float segStart01 = 0.05871f;
+    [Tooltip("이미지 기준 칸 간격 (칸 폭 + 틈, 0~1)")]
+    [SerializeField] float segPitch01 = 0.044413f;
+    [Tooltip("이미지 기준 칸 사이 틈 (0~1)")]
+    [SerializeField] float segGap01 = 0.005682f;
 
     [Header("Lean")]
     [SerializeField] TMP_Text leanText;
@@ -81,6 +95,14 @@ public class HoloHUD : MonoBehaviour
         if (fpCamera == null) fpCamera = FindFirstObjectByType<RideFirstPersonCamera>();
 
         if (scanlines != null && scanlines.texture == null) scanlines.texture = MakeScanlineTexture();
+
+        if (segmentFill)
+        {
+            segmentFill.type = Image.Type.Filled;
+            segmentFill.fillMethod = Image.FillMethod.Horizontal;
+            segmentFill.fillOrigin = (int)Image.OriginHorizontal.Left;
+            segmentFill.fillAmount = 0f;
+        }
     }
 
     void Update()
@@ -114,6 +136,9 @@ public class HoloHUD : MonoBehaviour
         SetBar(speedBarFill, t);
         SetBar(speedBarFillGlow, t);
         if (speedBar) speedBar.fillAmount = t;
+
+        // ---- 눈금 바: 5km/h마다 한 칸 ----
+        if (segmentFill) segmentFill.fillAmount = SegmentFillAmount(kmh);
 
         // ---- 기울기 ----
         float lean = bike.LeanAngle;   // + = 오른쪽(D)
@@ -154,7 +179,16 @@ public class HoloHUD : MonoBehaviour
         }
     }
 
-    // 9-slice 바: 부모 폭 × 비율로 길이 조절. 최소 폭 이하에선 가로 스케일로 줄여 끝 모양 유지
+    // 켜질 칸 수 → 이미지에서 그 칸의 끝(다음 칸과의 틈 중앙)까지 채우는 fillAmount
+    float SegmentFillAmount(float kmh)
+    {
+        if (kmh < 0.5f || kmhPerSegment <= 0f) return 0f;
+        int lit = Mathf.Clamp(Mathf.CeilToInt(kmh / kmhPerSegment - 0.001f), 0, segmentCount);
+        if (lit == 0) return 0f;
+        return Mathf.Clamp01(segStart01 + lit * segPitch01 - segGap01 * 0.5f);
+    }
+
+    // (구버전) 9-slice 바: 부모 폭 × 비율로 길이 조절. 최소 폭 이하에선 가로 스케일로 줄여 끝 모양 유지
     void SetBar(RectTransform r, float t)
     {
         if (r == null || r.parent == null) return;
