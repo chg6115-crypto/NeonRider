@@ -1,5 +1,4 @@
 ﻿<Solution>
-  <Project Path="VARCO3DBridge.Editor.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>
