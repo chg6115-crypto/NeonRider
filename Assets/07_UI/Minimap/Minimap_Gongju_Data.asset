@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a910921ea6f1f5439af5252dbbb6485, type: 3}
+  m_Name: Minimap_Gongju_Data
+  m_EditorClassIdentifier: Assembly-CSharp::MinimapData
+  mapTexture: {fileID: 2800000, guid: c47780ef2ded25149af6d87f36f0800a, type: 3}
+  worldMin: {x: -621.17236, y: -601.04553}
+  worldSize: 1218.561

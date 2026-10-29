@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.26, y: 15.81, z: 2.37}
-  m_LocalScale: {x: 1.8049499, y: 1.8049499, z: 1.8049499}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4183335653257153856}
   m_Father: {fileID: 0}
@@ -59,7 +59,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!65 &4228436169599134954
@@ -81,8 +81,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.2, y: 0.53, z: 1.3}
-  m_Center: {x: 0, y: 0.3, z: 0}
+  m_Size: {x: 0.2, y: 0.5, z: 1.5}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!114 &901127419394472051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +109,26 @@ MonoBehaviour:
   leanSmooth: 6
   fullLeanSpeed: 6
   invertLean: 0
+  visual: {fileID: 0}
+  frontWheel: {fileID: 0}
+  rearWheel: {fileID: 0}
+  wheelRadius: 0
+  stepHeight: 0.5
+  probeAhead: 0.6
+  suspensionTravel: 0.3
+  springStrength: 300
+  springDamping: 30
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  pitchSmooth: 10
+  maxGroundPitch: 40
+  airPitchMax: 25
+  airPitchSmooth: 2
+  airSteer: 0.2
+  slopeInfluence: 0
+  wallGlanceAngle: 50
+  wallDeflectSpeed: 240
 --- !u!1001 &98268995840575410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -188,6 +208,22 @@ PrefabInstance:
     - target: {fileID: 5362818869888031761, guid: d17e512a49349c349a320e5144cb4e11, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517203984412066304, guid: d17e512a49349c349a320e5144cb4e11, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517203984412066304, guid: d17e512a49349c349a320e5144cb4e11, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517203984412066304, guid: d17e512a49349c349a320e5144cb4e11, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517203984412066304, guid: d17e512a49349c349a320e5144cb4e11, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5362818869888031761, guid: d17e512a49349c349a320e5144cb4e11, type: 3}
