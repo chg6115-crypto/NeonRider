@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 64e1f49215f1a5c49a1d7c72e8fc0331
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Prefabs/Vice2ProfileVolume.prefab
+  uploadId: 593619

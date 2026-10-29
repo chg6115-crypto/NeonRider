@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 32257e25bbfec6d4e9af808c36c1a38c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Profiles/Movie_profile.asset
+  uploadId: 593619

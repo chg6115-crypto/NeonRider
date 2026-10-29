@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8e10a33780fbe8b479f828a86888fb0e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Prefabs/PurpleProfileVolume.prefab
+  uploadId: 593619

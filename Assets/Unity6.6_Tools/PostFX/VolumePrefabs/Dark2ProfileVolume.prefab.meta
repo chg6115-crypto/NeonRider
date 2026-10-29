@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8f9069186e1c326499c1c0323542b402
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Prefabs/Dark2ProfileVolume.prefab
+  uploadId: 593619

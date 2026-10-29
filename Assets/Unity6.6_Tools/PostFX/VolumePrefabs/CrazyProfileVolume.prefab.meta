@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 358e527539d70734186c18f243ef3fbb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Prefabs/CrazyProfileVolume.prefab
+  uploadId: 593619

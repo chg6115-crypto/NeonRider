@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 24b9e8e358fcae5448626e1632c3b0f8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Prefabs/AqueProfileVolume.prefab
+  uploadId: 593619

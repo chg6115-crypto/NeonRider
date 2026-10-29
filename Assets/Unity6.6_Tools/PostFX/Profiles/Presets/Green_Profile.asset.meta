@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c74ef75cce9fc7a4e8486ad009863455
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Profiles/GreenParadise.asset
+  uploadId: 593619

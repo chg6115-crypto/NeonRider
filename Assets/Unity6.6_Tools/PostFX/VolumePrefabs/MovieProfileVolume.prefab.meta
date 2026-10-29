@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b324ceb865749a94e88e415df062c34b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Prefabs/MovieProfileVolume.prefab
+  uploadId: 593619

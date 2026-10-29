@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 65016b13a66f2cd46945fd96b63c4ec1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Prefabs/HDRProfileVolume.prefab
+  uploadId: 593619

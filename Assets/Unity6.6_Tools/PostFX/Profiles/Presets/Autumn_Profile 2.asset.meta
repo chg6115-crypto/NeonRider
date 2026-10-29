@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2f092020e53cf2345a2ded8dc2626cdf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Profiles/Autumn2_profile.asset
+  uploadId: 593619

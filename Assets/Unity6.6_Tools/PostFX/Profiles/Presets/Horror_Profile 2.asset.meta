@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a029089e77c78df4bab676d9a17b98c9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Profiles/Horror3_profile.asset
+  uploadId: 593619

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 70a5a2d4273fb34488f9fd9727fc2b23
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Prefabs/Coziness2ProfileVolume.prefab
+  uploadId: 593619

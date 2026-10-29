@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 59dbaa1156941b94d95fa2cb6b7340d8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Profiles/HDR_profile.asset
+  uploadId: 593619

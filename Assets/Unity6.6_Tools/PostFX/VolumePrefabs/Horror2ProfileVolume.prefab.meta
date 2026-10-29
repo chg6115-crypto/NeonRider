@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6946dd1624a18504990bdee25b6457c1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Prefabs/Horror2ProfileVolume.prefab
+  uploadId: 593619

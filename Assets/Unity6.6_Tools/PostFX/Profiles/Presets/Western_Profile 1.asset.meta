@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 40af350bdd450ab46bcb07464e17253d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Profiles/Western_profile.asset
+  uploadId: 593619

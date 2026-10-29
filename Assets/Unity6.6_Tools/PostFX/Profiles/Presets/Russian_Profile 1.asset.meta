@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 350e78fa1590d414883c562b8fc91a5a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162770
+  packageName: URP Post Processing Profiles
+  packageVersion: 1.26
+  assetPath: Assets/URP PostProcessing Profiles/v4/Profiles/Russian_profile.asset
+  uploadId: 593619
