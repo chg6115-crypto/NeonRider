@@ -25,14 +25,19 @@ public class DeliveryDebugUI : MonoBehaviour
             s += $"<color=#4FC3FF>신선도 {o.Condition.Freshness:0.0}</color>   <color=#FF5A5A>형태 {o.Condition.Shape:0.0}</color>";
             if (o.Condition.IsFailed) s += "   <color=red><b>위험!</b></color>";
             s += "\n";
-            if (o.Target.IsOnFootInside(m.Rider)) s += $"[E] 길게 누르기  {Mathf.RoundToInt(m.HoldProgress01 * 100)}%\n";
-            else if (Vector3.Distance(Camera.main ? Camera.main.transform.position : Vector3.zero, o.Target.EntrancePosition) < 15f) s += "내려서 영역 안으로 걸어가세요\n";
+            var rider = m.Rider;
+            bool inside = rider != null && o.Target.Contains(rider.transform.position);
+            bool riding = rider != null && rider.IsRiding;
+            if (rider == null) s += "<color=red>RobotRider를 못 찾음</color>\n";
+            else if (inside && !riding) s += $"[E] 길게 누르기  {Mathf.RoundToInt(m.HoldProgress01 * 100)}%\n";
+            else if (inside && riding) s += "오토바이에서 내려야 해요 (F)\n";
+            else s += $"<size=12>영역 밖  (목적지까지 {Vector3.Distance(rider.transform.position, o.Target.transform.position):0.0}m)</size>\n";
         }
         else s += "다음 주문 대기 중...\n";
 
         if (m.LastResult is DeliveryResult r)
             s += $"\n지난 배달: {r.grade}  신선도 {r.freshnessPoints} / 형태 {r.shapePoints}  +{r.pay:N0}원\n\"{r.reaction}\"";
 
-        GUI.Box(new Rect(12, 12, 460, 190), s, style);
+        GUI.Box(new Rect(12, 12, 460, 210), s, style);
     }
 }

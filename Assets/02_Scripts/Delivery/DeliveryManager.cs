@@ -24,8 +24,12 @@ public class DeliveryManager : MonoBehaviour
     [Header("Rules")]
     [SerializeField] DeliveryRules rules = new DeliveryRules();
 
+    [Header("Visual")]
+    [Tooltip("배달 지점 바닥 표시용 머티리얼 (URP Unlit, Transparent, Base Map = Delivery_Zone.png)")]
+    [SerializeField] Material zoneMaterial;
+
     [Header("Interaction")]
-    [SerializeField] float holdTime = 0.5f;
+    [SerializeField] float holdTime = 0.3f;
 
     [Header("Orders")]
     [SerializeField] bool autoCreateOrders = true;
@@ -44,6 +48,7 @@ public class DeliveryManager : MonoBehaviour
     public DeliveryResult? LastResult { get; private set; }
     public DeliveryRules Rules => rules;
     public RobotRider Rider => rider;
+    public Material ZoneMaterial => zoneMaterial;
 
     // ---- 이벤트 (UI는 이것만 듣기) ----
     public event Action<Order> OrderCreated;
