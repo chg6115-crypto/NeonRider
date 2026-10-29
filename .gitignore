@@ -75,5 +75,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 
-/Assets/VARCO_URP/
-/Assets/VARCO_URP.meta
+/Claude outputs/
