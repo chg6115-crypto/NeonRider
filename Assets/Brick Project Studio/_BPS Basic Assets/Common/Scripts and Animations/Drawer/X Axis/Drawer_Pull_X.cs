@@ -29,7 +29,7 @@ namespace SojaExiles
 						print("object name");
 						if (open == false)
 						{
-							if (Input.GetMouseButtonDown(0))
+							if (BPSInput.ClickDown())
 							{
 								StartCoroutine(opening());
 							}
@@ -38,7 +38,7 @@ namespace SojaExiles
 						{
 							if (open == true)
 							{
-								if (Input.GetMouseButtonDown(0))
+								if (BPSInput.ClickDown())
 								{
 									StartCoroutine(closing());
 								}
