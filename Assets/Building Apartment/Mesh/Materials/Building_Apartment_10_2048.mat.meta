@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b267a8af220d84d418ede3ddfa5cbe43
+timeCreated: 1492939810
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 80004
+  packageName: Building Apartment
+  packageVersion: 1.0
+  assetPath: Assets/Building Apartment/Mesh/Materials/Building_Apartment_10_2048.mat
+  uploadId: 175955
