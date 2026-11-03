@@ -18,7 +18,7 @@ public class DeliveryPoint : MonoBehaviour
 
     [SerializeField] DeliveryPointType type = DeliveryPointType.Dropoff;
     [Tooltip("픽업 지점일 때 이 가게")]
-    [SerializeField] StoreData store;
+    [SerializeField] StoreData store;              // 비우면 배달지 (가게 픽업 DP일 때만 연결)
     [Tooltip("배달 지점 이름 (예: 대전지방법원 공주지원)")]
     [SerializeField] string displayName = "";
     [Tooltip("고정 ID. 엑셀 Destinations 탭의 dp_id와 매칭 (예: BLOCK013-01). 비어 있으면 가져오기 때 자동으로 채움")]
@@ -27,7 +27,7 @@ public class DeliveryPoint : MonoBehaviour
     [SerializeField] string address = "";
     [Tooltip("분류 (Residential / Commercial / Office / Landmark 등, 엑셀에서 가져옴)")]
     [SerializeField] string category = "";
-    [SerializeField] Transform entrance;
+    [SerializeField] Transform entrance;           // 비우면 이 DP 위치를 입구로 사용
 
     [Header("Minimap")]
     [Tooltip("MinimapMarker가 없으면 자동으로 추가")]

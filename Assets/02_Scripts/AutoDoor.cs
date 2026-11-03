@@ -20,13 +20,13 @@ public class AutoDoor : MonoBehaviour
     [SerializeField] bool swingAwayFromPlayer = true;
 
     [Header("References")]
-    [SerializeField] RobotRider rider;
+    [SerializeField] RobotRider rider;              // 비우면 씬에서 찾음
     [SerializeField] Behaviour[] disableOnStart;
 
     [Header("Optional")]
     [Tooltip("양문에 같은 대상을 지정하면 같은 위치에서 접근을 감지합니다. " +
              "회전하지 않는 입구 중앙 Empty를 지정하세요.")]
-    [SerializeField] Transform detectionPoint;
+    [SerializeField] Transform detectionPoint;      // 비우면 닫힌 문의 중앙 위치 사용
 
     [Tooltip("감지 경계에서 문이 반복해서 열리고 닫히는 것을 방지")]
     [Min(0f)]

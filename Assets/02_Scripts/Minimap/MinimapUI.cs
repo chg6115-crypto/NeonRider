@@ -59,10 +59,10 @@ public class MinimapUI : MonoBehaviour
     [SerializeField] float zoomSmooth = 1.5f;
 
     [Header("Big Map (M)")]
-    [SerializeField] GameObject bigPanel;
-    [SerializeField] RawImage bigMap;
-    [SerializeField] RectTransform bigPlayer;
-    [SerializeField] RectTransform bigMarkerLayer;
+    [SerializeField] GameObject bigPanel;              // 비우면 실행 시 자동 생성 (autoBuildBigMap)
+    [SerializeField] RawImage bigMap;                  // 비우면 자동 생성
+    [SerializeField] RectTransform bigPlayer;          // 비우면 자동 생성
+    [SerializeField] RectTransform bigMarkerLayer;     // 비우면 자동 생성
     [Tooltip("큰 지도를 열면 작은 지도는 숨김")]
     [SerializeField] bool hideSmallWhenBig = true;
     [Tooltip("(임시) Big Map 참조가 비어 있으면 실행할 때 큰 지도 UI를 자동으로 만듦")]
@@ -72,7 +72,7 @@ public class MinimapUI : MonoBehaviour
 
     [Header("Labels")]
     [SerializeField] RectTransform smallLabelLayer;
-    [SerializeField] RectTransform bigLabelLayer;
+    [SerializeField] RectTransform bigLabelLayer;      // 비우면 자동 생성
     [Tooltip("한글이 들어있는 TMP 폰트 (예: NotoSansKR SDF, Dynamic)")]
     [SerializeField] TMP_FontAsset labelFont;
     [SerializeField] float smallLabelSize = 15f;

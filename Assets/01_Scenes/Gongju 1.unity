@@ -1376,7 +1376,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 31763272}
-  - component: {fileID: 31763273}
   m_Layer: 0
   m_Name: decal (8)
   m_TagString: Untagged
@@ -1399,18 +1398,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 88.58}
---- !u!114 &31763273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31763271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &32724327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2738,7 +2725,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 69401767}
-  - component: {fileID: 69401768}
   m_Layer: 0
   m_Name: decal (19)
   m_TagString: Untagged
@@ -2761,18 +2747,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 103.18}
---- !u!114 &69401768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69401766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &72947187
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2947,7 +2921,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 82189051}
-  - component: {fileID: 82189052}
   m_Layer: 0
   m_Name: decal (30)
   m_TagString: Untagged
@@ -2970,18 +2943,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 243.663}
---- !u!114 &82189052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82189050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &83039326
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3253,7 +3214,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 103460369}
-  - component: {fileID: 103460370}
   m_Layer: 0
   m_Name: decal (13)
   m_TagString: Untagged
@@ -3276,18 +3236,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: 370.211}
---- !u!114 &103460370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103460368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &103755207
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5643,7 +5591,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 235756781}
-  - component: {fileID: 235756782}
   m_Layer: 0
   m_Name: decal (38)
   m_TagString: Untagged
@@ -5666,18 +5613,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 305.123}
---- !u!114 &235756782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235756780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &236217973 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2700874171910072504, guid: 330efb0e9eed825408809c121441b8a5, type: 3}
@@ -7858,7 +7793,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 333723646}
-  - component: {fileID: 333723647}
   m_Layer: 0
   m_Name: decal (2)
   m_TagString: Untagged
@@ -7881,18 +7815,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: 43.747}
---- !u!114 &333723647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333723645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &334717153
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8016,7 +7938,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 343220587}
-  - component: {fileID: 343220588}
   m_Layer: 0
   m_Name: decal (44)
   m_TagString: Untagged
@@ -8039,18 +7960,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 270}
---- !u!114 &343220588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343220586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &348534360
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8741,7 +8650,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 385345636}
-  - component: {fileID: 385345637}
   m_Layer: 0
   m_Name: decal (32)
   m_TagString: Untagged
@@ -8764,18 +8672,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 156.326}
---- !u!114 &385345637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385345635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &385373390
 GameObject:
   m_ObjectHideFlags: 0
@@ -10953,7 +10849,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 445033543}
-  - component: {fileID: 445033544}
   m_Layer: 0
   m_Name: decal (42)
   m_TagString: Untagged
@@ -10976,18 +10871,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 263.918}
---- !u!114 &445033544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445033542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &445204897
 GameObject:
   m_ObjectHideFlags: 0
@@ -11029,7 +10912,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 445308611}
-  - component: {fileID: 445308612}
   m_Layer: 0
   m_Name: decal (25)
   m_TagString: Untagged
@@ -11052,18 +10934,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 121.167}
---- !u!114 &445308612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445308610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &445980986
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12354,7 +12224,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 521539016}
-  - component: {fileID: 521539017}
   m_Layer: 0
   m_Name: decal (17)
   m_TagString: Untagged
@@ -12377,18 +12246,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 110.951}
---- !u!114 &521539017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521539015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &524885216
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12533,7 +12390,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 535815430}
-  - component: {fileID: 535815431}
   m_Layer: 0
   m_Name: decal (18)
   m_TagString: Untagged
@@ -12556,18 +12412,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 112.687}
---- !u!114 &535815431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535815429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &536439515
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12692,7 +12536,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 541626351}
-  - component: {fileID: 541626352}
   m_Layer: 0
   m_Name: decal (9)
   m_TagString: Untagged
@@ -12715,18 +12558,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: 180.801}
---- !u!114 &541626352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541626350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &541950098
 GameObject:
   m_ObjectHideFlags: 0
@@ -12822,7 +12653,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 544841634}
-  - component: {fileID: 544841635}
   m_Layer: 0
   m_Name: decal (28)
   m_TagString: Untagged
@@ -12845,18 +12675,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 237.784}
---- !u!114 &544841635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544841633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &551593358
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13054,7 +12872,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 558243871}
-  - component: {fileID: 558243872}
   m_Layer: 0
   m_Name: decal (39)
   m_TagString: Untagged
@@ -13077,18 +12894,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 305.123}
---- !u!114 &558243872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558243870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &559667600
 GameObject:
   m_ObjectHideFlags: 0
@@ -15573,7 +15378,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 650454173}
-  - component: {fileID: 650454174}
   m_Layer: 0
   m_Name: decal (48)
   m_TagString: Untagged
@@ -15596,18 +15400,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 873164979}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90.561}
---- !u!114 &650454174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650454172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &650716801
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16604,7 +16396,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 694067260}
-  - component: {fileID: 694067261}
   m_Layer: 0
   m_Name: decal (6)
   m_TagString: Untagged
@@ -16627,18 +16418,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 88.485}
---- !u!114 &694067261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694067259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &695047702
 GameObject:
   m_ObjectHideFlags: 0
@@ -16648,7 +16427,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 695047703}
-  - component: {fileID: 695047704}
   m_Layer: 0
   m_Name: decal (20)
   m_TagString: Untagged
@@ -16671,18 +16449,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 171.896}
---- !u!114 &695047704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695047702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &695936086
 GameObject:
   m_ObjectHideFlags: 0
@@ -16783,7 +16549,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 696116942}
-  - component: {fileID: 696116943}
   m_Layer: 0
   m_Name: decal (14)
   m_TagString: Untagged
@@ -16806,18 +16571,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 89.972, y: 0, z: 77.253}
---- !u!114 &696116943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696116941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &696540218
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17281,7 +17034,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 723600782}
-  - component: {fileID: 723600783}
   m_Layer: 0
   m_Name: decal (12)
   m_TagString: Untagged
@@ -17304,18 +17056,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 274.043}
---- !u!114 &723600783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 723600781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &724345978
 GameObject:
   m_ObjectHideFlags: 0
@@ -17530,7 +17270,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728345376}
-  - component: {fileID: 728345377}
   m_Layer: 0
   m_Name: decal (36)
   m_TagString: Untagged
@@ -17553,18 +17292,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 169.017}
---- !u!114 &728345377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728345375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &728624691
 GameObject:
   m_ObjectHideFlags: 0
@@ -20447,7 +20174,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 900150758}
-  - component: {fileID: 900150759}
   m_Layer: 0
   m_Name: decal (1)
   m_TagString: Untagged
@@ -20470,18 +20196,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &900150759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900150757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &900660487
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20545,7 +20259,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 902571587}
-  - component: {fileID: 902571588}
   m_Layer: 0
   m_Name: decal (11)
   m_TagString: Untagged
@@ -20568,18 +20281,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 232.13501}
---- !u!114 &902571588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 902571586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &902905952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21413,7 +21114,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 936535471}
-  - component: {fileID: 936535472}
   m_Layer: 0
   m_Name: decal (46)
   m_TagString: Untagged
@@ -21436,18 +21136,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 873164979}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 18.142}
---- !u!114 &936535472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936535470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &937633780
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22832,7 +22520,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 993999037}
-  - component: {fileID: 993999038}
   m_Layer: 0
   m_Name: decal (35)
   m_TagString: Untagged
@@ -22855,18 +22542,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 188.467}
---- !u!114 &993999038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993999036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &994621436
 GameObject:
   m_ObjectHideFlags: 0
@@ -23211,7 +22886,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1004884631}
-  - component: {fileID: 1004884632}
   m_Layer: 0
   m_Name: decal (45)
   m_TagString: Untagged
@@ -23234,18 +22908,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 873164979}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1004884632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004884630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1007345714
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27667,7 +27329,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1194515969}
-  - component: {fileID: 1194515970}
   m_Layer: 0
   m_Name: decal (40)
   m_TagString: Untagged
@@ -27690,18 +27351,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 270.239}
---- !u!114 &1194515970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194515968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1196553260
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27733,7 +27382,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1202252350}
-  - component: {fileID: 1202252351}
   m_Layer: 0
   m_Name: decal (21)
   m_TagString: Untagged
@@ -27756,18 +27404,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 101.444}
---- !u!114 &1202252351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202252349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1207439571
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28432,7 +28068,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1230697775}
-  - component: {fileID: 1230697776}
   m_Layer: 0
   m_Name: decal (15)
   m_TagString: Untagged
@@ -28455,18 +28090,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 112.687}
---- !u!114 &1230697776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230697774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1237005077
 GameObject:
   m_ObjectHideFlags: 0
@@ -29740,7 +29363,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1292725506}
-  - component: {fileID: 1292725507}
   m_Layer: 0
   m_Name: decal (4)
   m_TagString: Untagged
@@ -29763,18 +29385,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 66.833}
---- !u!114 &1292725507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292725505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1295628459
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31374,7 +30984,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1332152659}
-  - component: {fileID: 1332152660}
   m_Layer: 0
   m_Name: decal (3)
   m_TagString: Untagged
@@ -31397,18 +31006,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 88.58}
---- !u!114 &1332152660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332152658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1332290895
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31553,7 +31150,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1335208984}
-  - component: {fileID: 1335208985}
   m_Layer: 0
   m_Name: decal (27)
   m_TagString: Untagged
@@ -31576,18 +31172,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 195.814}
---- !u!114 &1335208985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335208983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1336810302
 GameObject:
   m_ObjectHideFlags: 0
@@ -34089,7 +33673,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1422903514}
-  - component: {fileID: 1422903515}
   m_Layer: 0
   m_Name: decal (31)
   m_TagString: Untagged
@@ -34112,18 +33695,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 285.633}
---- !u!114 &1422903515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422903513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1423957629
 GameObject:
   m_ObjectHideFlags: 0
@@ -34346,7 +33917,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1439593232}
-  - component: {fileID: 1439593233}
   m_Layer: 0
   m_Name: decal (7)
   m_TagString: Untagged
@@ -34369,18 +33939,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 88.485}
---- !u!114 &1439593233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439593231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1440546490
 GameObject:
   m_ObjectHideFlags: 0
@@ -34610,7 +34168,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1446384781}
-  - component: {fileID: 1446384782}
   m_Layer: 0
   m_Name: decal (43)
   m_TagString: Untagged
@@ -34633,18 +34190,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 270}
---- !u!114 &1446384782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446384780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1449721481
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35942,7 +35487,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1494125969}
-  - component: {fileID: 1494125970}
   m_Layer: 0
   m_Name: decal (24)
   m_TagString: Untagged
@@ -35965,18 +35509,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 191.444}
---- !u!114 &1494125970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494125968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1496631368
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36383,7 +35915,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1519314198}
-  - component: {fileID: 1519314199}
   m_Layer: 0
   m_Name: decal (16)
   m_TagString: Untagged
@@ -36406,18 +35937,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 181.402}
---- !u!114 &1519314199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519314197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1520634430
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36912,7 +36431,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1546896991}
-  - component: {fileID: 1546896992}
   m_Layer: 0
   m_Name: decal (26)
   m_TagString: Untagged
@@ -36935,18 +36453,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 121.167}
---- !u!114 &1546896992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546896990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1548901048
 GameObject:
   m_ObjectHideFlags: 0
@@ -38188,7 +37694,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1597106444}
-  - component: {fileID: 1597106445}
   m_Layer: 0
   m_Name: decal (34)
   m_TagString: Untagged
@@ -38211,18 +37716,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 272.94202}
---- !u!114 &1597106445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597106443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1597213749
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41241,7 +40734,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1718438601}
-  - component: {fileID: 1718438602}
   m_Layer: 0
   m_Name: decal (49)
   m_TagString: Untagged
@@ -41264,18 +40756,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 873164979}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -121.036}
---- !u!114 &1718438602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718438600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1722320588
 GameObject:
   m_ObjectHideFlags: 0
@@ -41285,7 +40765,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1722320589}
-  - component: {fileID: 1722320590}
   m_Layer: 0
   m_Name: decal
   m_TagString: Untagged
@@ -41308,18 +40787,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1722320590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722320588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1724498592
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41881,7 +41348,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1763133813}
-  - component: {fileID: 1763133814}
   m_Layer: 0
   m_Name: decal (5)
   m_TagString: Untagged
@@ -41904,18 +41370,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 156.331}
---- !u!114 &1763133814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763133812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1763194500
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43985,7 +43439,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1858824300}
-  - component: {fileID: 1858824301}
   m_Layer: 0
   m_Name: decal (47)
   m_TagString: Untagged
@@ -44008,18 +43461,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 873164979}
   m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: -28.64}
---- !u!114 &1858824301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1858824299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1859555343
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44821,7 +44262,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1880348418}
-  - component: {fileID: 1880348419}
   m_Layer: 0
   m_Name: decal (29)
   m_TagString: Untagged
@@ -44844,18 +44284,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 169.017}
---- !u!114 &1880348419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880348417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1881662764
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45056,7 +44484,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1889567804}
-  - component: {fileID: 1889567805}
   m_Layer: 0
   m_Name: decal (33)
   m_TagString: Untagged
@@ -45079,18 +44506,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 230.972}
---- !u!114 &1889567805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889567803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1893021985
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46136,7 +45551,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1932332905}
-  - component: {fileID: 1932332906}
   m_Layer: 0
   m_Name: decal (22)
   m_TagString: Untagged
@@ -46159,18 +45573,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 193.18}
---- !u!114 &1932332906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932332904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1932769340
 GameObject:
   m_ObjectHideFlags: 0
@@ -46257,7 +45659,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1933702585}
-  - component: {fileID: 1933702586}
   m_Layer: 0
   m_Name: decal (10)
   m_TagString: Untagged
@@ -46280,18 +45681,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 232.13501}
---- !u!114 &1933702586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933702584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1933875588
 GameObject:
   m_ObjectHideFlags: 0
@@ -47842,7 +47231,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1986191014}
-  - component: {fileID: 1986191015}
   m_Layer: 0
   m_Name: decal (23)
   m_TagString: Untagged
@@ -47865,18 +47253,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 177.11}
---- !u!114 &1986191015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986191013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1986283566
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49640,7 +49016,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2062671430}
-  - component: {fileID: 2062671431}
   m_Layer: 0
   m_Name: decal (41)
   m_TagString: Untagged
@@ -49663,18 +49038,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 305.123}
---- !u!114 &2062671431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062671429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2063251614
 GameObject:
   m_ObjectHideFlags: 0
@@ -49684,7 +49047,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2063251615}
-  - component: {fileID: 2063251616}
   m_Layer: 0
   m_Name: decal (37)
   m_TagString: Untagged
@@ -49707,18 +49069,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 292699859}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 243.663}
---- !u!114 &2063251616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063251614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &2065743019
 MeshCollider:
   m_ObjectHideFlags: 0
