@@ -15,3 +15,4 @@ MonoBehaviour:
   mapTexture: {fileID: 2800000, guid: c47780ef2ded25149af6d87f36f0800a, type: 3}
   worldMin: {x: -621.17236, y: -601.04553}
   worldSize: 1218.561
+  northUpRotation: 180

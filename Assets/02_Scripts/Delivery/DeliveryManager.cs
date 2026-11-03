@@ -40,6 +40,8 @@ public class DeliveryManager : MonoBehaviour
     [Header("Debug")]
     [Tooltip("테스트용: 1분을 몇 초로 볼지 (60 = 실제 시간)")]
     [SerializeField] float secondsPerMinute = 60f;
+    [Tooltip("디버그 키 (에디터/개발 빌드에서만)\nF9: 현재 단계 즉시 완료 (픽업 또는 전달)\nF10: 현재 주문 바로 배달 완료\nF11: 현재 주문 버리고 새 주문")]
+    [SerializeField] bool debugKeys = true;
 
     // ---- 상태 ----
     public Order CurrentOrder { get; private set; }
@@ -80,6 +82,7 @@ public class DeliveryManager : MonoBehaviour
     void Update()
     {
         float dt = Time.deltaTime;
+        HandleDebugKeys();
 
         // 다음 주문 대기
         if (CurrentOrder == null && autoCreateOrders && nextOrderTimer >= 0f)
@@ -117,7 +120,7 @@ public class DeliveryManager : MonoBehaviour
     // ---------------- 주문 ----------------
     public bool CreateRandomOrder()
     {
-        var pickups = DeliveryPoint.All.Where(p => p.Type == DeliveryPointType.Pickup && p.Store != null && p.Store.menu != null && p.Store.menu.Length > 0).ToList();
+        var pickups = DeliveryPoint.All.Where(p => p.Type == DeliveryPointType.Pickup && p.Store != null && p.Store.available && p.Store.menu != null && p.Store.menu.Length > 0).ToList();
         var drops = DeliveryPoint.All.Where(p => p.Type == DeliveryPointType.Dropoff).ToList();
         if (pickups.Count == 0 || drops.Count == 0)
         {
@@ -139,7 +142,7 @@ public class DeliveryManager : MonoBehaviour
         CurrentOrder = order;
         nextOrderTimer = -1f;
         RefreshBeacons();
-        Debug.Log($"[Delivery] 주문 #{order.Id}: {order.StoreName} → {order.Destination.DisplayName} ({order.Food?.displayName}), 직선 {order.DistanceMeters:0}m, 예상 {rules.BaseFor(order.DistanceMeters):N0}원");
+        Debug.Log($"[Delivery] 주문 #{order.Id}: {order.StoreName} → {order.Destination.DisplayName} ({order.Food?.displayName}), 직선 {order.DistanceMeters:0}m, 예상 {rules.BaseFor(order.DistanceMeters, order.Food):N0}원");
         OrderCreated?.Invoke(order);
     }
 
@@ -155,7 +158,7 @@ public class DeliveryManager : MonoBehaviour
     void DoDeliver(Order o)
     {
         var grade = DeliveryRules.GradeOf(o.Condition);
-        int pay = rules.PayFor(o.DistanceMeters, grade);
+        int pay = rules.PayFor(o.DistanceMeters, grade, o.Food);
         o.State = grade == DeliveryGrade.Failed ? OrderState.Failed : OrderState.Delivered;
 
         var result = new DeliveryResult
@@ -199,6 +202,54 @@ public class DeliveryManager : MonoBehaviour
             Debug.Log($"[Delivery] 착지 충격 {impact:0.0}m/s → 형태 -{lost:0.00} (현재 {o.Condition.Shape:0.0})");
             ShapeDamaged?.Invoke(o, lost);
         }
+    }
+
+    // ---------------- 디버그 ----------------
+    public bool DebugKeysEnabled => debugKeys;
+
+    /// <summary>현재 단계 즉시 완료. 주문이 없으면 새 주문 생성</summary>
+    public void DebugCompleteStep()
+    {
+        var o = CurrentOrder;
+        if (o == null) { CreateRandomOrder(); return; }
+        ResetHold();
+        if (o.State == OrderState.Accepted) DoPickup(o);
+        else if (o.State == OrderState.PickedUp) DoDeliver(o);
+    }
+
+    /// <summary>현재 주문을 픽업부터 전달까지 한 번에 완료 (지금 음식 상태로 판정)</summary>
+    public void DebugCompleteOrder()
+    {
+        var o = CurrentOrder;
+        if (o == null) { Debug.Log("[Delivery][Debug] 진행 중인 주문 없음"); return; }
+        ResetHold();
+        if (o.State == OrderState.Accepted) DoPickup(o);
+        if (o.State == OrderState.PickedUp) DoDeliver(o);
+    }
+
+    /// <summary>현재 주문을 버리고 바로 새 주문</summary>
+    public void DebugNewOrder()
+    {
+        if (CurrentOrder != null)
+        {
+            Debug.Log($"[Delivery][Debug] 주문 #{CurrentOrder.Id} 취소");
+            CurrentOrder.State = OrderState.Failed;
+            CurrentOrder = null;
+            RefreshBeacons();
+        }
+        ResetHold();
+        CreateRandomOrder();
+    }
+
+    void HandleDebugKeys()
+    {
+#if (UNITY_EDITOR || DEVELOPMENT_BUILD) && ENABLE_INPUT_SYSTEM
+        var kb = Keyboard.current;
+        if (!debugKeys || kb == null) return;
+        if (kb.f9Key.wasPressedThisFrame) DebugCompleteStep();
+        if (kb.f10Key.wasPressedThisFrame) DebugCompleteOrder();
+        if (kb.f11Key.wasPressedThisFrame) DebugNewOrder();
+#endif
     }
 
     // ---------------- 입력 ----------------

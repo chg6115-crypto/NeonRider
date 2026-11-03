@@ -20,7 +20,7 @@ public class DeliveryDebugUI : MonoBehaviour
         {
             string step = o.State == OrderState.Accepted ? "픽업하러 가기" : "배달하러 가기";
             s += $"주문 #{o.Id}  {o.StoreName} → {o.Destination.DisplayName}\n";
-            s += $"{o.Food?.displayName}  /  {o.DistanceMeters:0}m  /  예상 {m.Rules.BaseFor(o.DistanceMeters):N0}원\n";
+            s += $"{o.Food?.displayName}  /  {o.DistanceMeters:0}m  /  예상 {m.Rules.BaseFor(o.DistanceMeters, o.Food):N0}원\n";
             s += $"<b>{step}</b> : {o.Target.DisplayName}  ({Vector3.Distance(Camera.main ? Camera.main.transform.position : Vector3.zero, o.Target.EntrancePosition):0}m)\n";
             s += $"<color=#4FC3FF>신선도 {o.Condition.Freshness:0.0}</color>   <color=#FF5A5A>형태 {o.Condition.Shape:0.0}</color>";
             if (o.Condition.IsFailed) s += "   <color=red><b>위험!</b></color>";
@@ -38,6 +38,9 @@ public class DeliveryDebugUI : MonoBehaviour
         if (m.LastResult is DeliveryResult r)
             s += $"\n지난 배달: {r.grade}  신선도 {r.freshnessPoints} / 형태 {r.shapePoints}  +{r.pay:N0}원\n\"{r.reaction}\"";
 
-        GUI.Box(new Rect(12, 12, 460, 210), s, style);
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+        if (m.DebugKeysEnabled) s += "\n<size=12><color=#AAAAAA>[F9] 단계 완료  [F10] 배달 완료  [F11] 새 주문  [M] 전체 지도</color></size>";
+#endif
+        GUI.Box(new Rect(12, 12, 460, 230), s, style);
     }
 }

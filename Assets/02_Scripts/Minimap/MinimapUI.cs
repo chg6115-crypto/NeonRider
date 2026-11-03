@@ -65,6 +65,10 @@ public class MinimapUI : MonoBehaviour
     [SerializeField] RectTransform bigMarkerLayer;
     [Tooltip("큰 지도를 열면 작은 지도는 숨김")]
     [SerializeField] bool hideSmallWhenBig = true;
+    [Tooltip("(임시) Big Map 참조가 비어 있으면 실행할 때 큰 지도 UI를 자동으로 만듦")]
+    [SerializeField] bool autoBuildBigMap = true;
+    [Tooltip("(임시) 자동 큰 지도의 한 변 = 화면 짧은 변 × 이 비율")]
+    [Range(0.5f, 1f)][SerializeField] float autoBigMapRatio = 0.9f;
 
     [Header("Labels")]
     [SerializeField] RectTransform smallLabelLayer;
@@ -101,6 +105,7 @@ public class MinimapUI : MonoBehaviour
         if (target == null && rider) target = rider.transform;
         if (bike == null) bike = FindFirstObjectByType<MotorcycleTestDrive>(FindObjectsInactive.Include);
         currentView = zoomWithSpeed ? minViewMeters : smallViewMeters;
+        if (bigPanel == null && autoBuildBigMap) BuildBigMapRuntime();
         if (data != null && data.mapTexture != null)
         {
             if (smallMap) smallMap.texture = data.mapTexture;
@@ -158,16 +163,18 @@ public class MinimapUI : MonoBehaviour
         const float over = 1.42f;                                 // 회전 여유 (√2)
         float uvSpan = view * over / data.worldSize;
 
+        // 지도 회전: 진행 방향이 위(내비) 또는 북쪽이 위
+        float mapAngle = rotateWithHeading ? shownYaw : data.northUpRotation;
         if (smallMap)
         {
             smallMap.rectTransform.sizeDelta = new Vector2(side * over, side * over);
             smallMap.uvRect = new Rect(uv.x - uvSpan * 0.5f, uv.y - uvSpan * 0.5f, uvSpan, uvSpan);
-            smallMap.rectTransform.localEulerAngles = new Vector3(0f, 0f, rotateWithHeading ? shownYaw : 0f);
+            smallMap.rectTransform.localEulerAngles = new Vector3(0f, 0f, mapAngle);
         }
         if (smallPlayer)
         {
             smallPlayer.anchoredPosition = Vector2.zero;
-            smallPlayer.localEulerAngles = new Vector3(0f, 0f, rotateWithHeading ? 0f : -shownYaw);
+            smallPlayer.localEulerAngles = new Vector3(0f, 0f, mapAngle - shownYaw);
         }
 
         // 마커/지명: 플레이어 기준 상대 위치(m) → px
@@ -181,8 +188,7 @@ public class MinimapUI : MonoBehaviour
             var l = kv.Key; var txt = kv.Value;
             if (l == null) continue;
             Vector3 d = l.transform.position - target.position;
-            Vector2 p = new Vector2(d.x, d.z) * pxPerMeter;
-            if (rotateWithHeading) p = Rotate(p, shownYaw);
+            Vector2 p = Rotate(new Vector2(d.x, d.z) * pxPerMeter, mapAngle);
             bool tooFar = l.hideWhenViewOver > 0f && view > l.hideWhenViewOver;
             txt.enabled = l.showOnSmall && !tooFar && p.magnitude <= radius - 10f;
             txt.rectTransform.anchoredPosition = p;
@@ -194,8 +200,7 @@ public class MinimapUI : MonoBehaviour
             var m = kv.Key; var img = kv.Value;
             if (m == null) continue;
             Vector3 d = m.transform.position - target.position;
-            Vector2 p = new Vector2(d.x, d.z) * pxPerMeter;
-            if (rotateWithHeading) p = Rotate(p, shownYaw);   // 지도와 같이 회전
+            Vector2 p = Rotate(new Vector2(d.x, d.z) * pxPerMeter, mapAngle);   // 지도와 같이 회전
             bool inside = p.magnitude <= radius;
             if (!inside && m.clampToEdge) p = p.normalized * radius;
             img.enabled = m.visible && (inside || m.clampToEdge);
@@ -207,6 +212,10 @@ public class MinimapUI : MonoBehaviour
     void UpdateBig(Vector2 uv)
     {
         if (bigMap == null) return;
+        if (autoBuilt) FitAutoBigMap();
+        // 북쪽이 위로 오도록 지도째 회전. 글자·아이콘은 반대로 돌려서 똑바로 유지
+        float north = data.northUpRotation;
+        bigMap.rectTransform.localEulerAngles = new Vector3(0f, 0f, north);
         Rect r = bigMap.rectTransform.rect;
         if (bigPlayer)
         {
@@ -222,6 +231,7 @@ public class MinimapUI : MonoBehaviour
             Vector2 luv = data.WorldToUV(l.transform.position);
             txt.rectTransform.anchorMin = txt.rectTransform.anchorMax = Vector2.zero;
             txt.rectTransform.anchoredPosition = new Vector2(luv.x * r.width, luv.y * r.height);
+            txt.rectTransform.localEulerAngles = new Vector3(0f, 0f, -north);
             txt.enabled = l.showOnBig;
         }
 
@@ -233,6 +243,7 @@ public class MinimapUI : MonoBehaviour
             Vector2 muv = data.WorldToUV(m.transform.position);
             img.rectTransform.anchorMin = img.rectTransform.anchorMax = Vector2.zero;
             img.rectTransform.anchoredPosition = new Vector2(muv.x * r.width, muv.y * r.height);
+            img.rectTransform.localEulerAngles = new Vector3(0f, 0f, -north);
             img.enabled = m.visible;
         }
     }
@@ -297,6 +308,70 @@ public class MinimapUI : MonoBehaviour
             if (kv.Key == null || !MinimapLabel.All.Contains(kv.Key)) { if (dead == null) dead = new List<MinimapLabel>(); dead.Add(kv.Key); }
         if (dead != null)
             foreach (var l in dead) { if (labels[l]) Destroy(labels[l].gameObject); labels.Remove(l); }
+    }
+
+    // ---------------- (임시) 큰 지도 자동 생성 ----------------
+    bool autoBuilt;
+
+    // 씬에 큰 지도 UI가 없을 때: 반투명 배경 + 가운데 정사각형 지도 + 지명/마커/플레이어 레이어를 만듦
+    void BuildBigMapRuntime()
+    {
+        Canvas canvas = GetComponentInParent<Canvas>();
+        if (canvas == null && smallRoot != null) canvas = smallRoot.GetComponentInParent<Canvas>();
+        if (canvas == null) { Debug.LogWarning("[Minimap] 큰 지도를 만들 Canvas를 못 찾음"); return; }
+        canvas = canvas.rootCanvas;
+
+        var panel = NewUI("MinimapBig (auto)", canvas.transform);
+        Stretch(panel);
+        var bg = panel.gameObject.AddComponent<Image>();
+        bg.color = new Color(0f, 0f, 0f, 0.75f);
+        bg.raycastTarget = false;
+        panel.SetAsLastSibling();
+
+        var mapRt = NewUI("BigMap", panel);
+        mapRt.anchorMin = mapRt.anchorMax = mapRt.pivot = new Vector2(0.5f, 0.5f);
+        mapRt.anchoredPosition = Vector2.zero;
+        bigMap = mapRt.gameObject.AddComponent<RawImage>();
+        bigMap.raycastTarget = false;
+
+        bigLabelLayer = NewUI("BigLabels", mapRt); Stretch(bigLabelLayer);
+        bigMarkerLayer = NewUI("BigMarkers", mapRt); Stretch(bigMarkerLayer);
+
+        bigPlayer = NewUI("BigPlayer", mapRt);
+        bigPlayer.sizeDelta = new Vector2(28f, 28f);
+        var arrow = bigPlayer.gameObject.AddComponent<Image>();
+        arrow.raycastTarget = false;
+        arrow.preserveAspect = true;
+        var smallArrow = smallPlayer ? smallPlayer.GetComponent<Image>() : null;
+        if (smallArrow != null) { arrow.sprite = smallArrow.sprite; arrow.color = smallArrow.color; }
+        else arrow.color = new Color(1f, 0.3f, 0.2f);
+
+        bigPanel = panel.gameObject;
+        autoBuilt = true;
+        FitAutoBigMap();
+    }
+
+    // 화면 크기가 바뀌어도 정사각형 유지
+    void FitAutoBigMap()
+    {
+        if (bigMap == null || bigPanel == null) return;
+        Rect pr = ((RectTransform)bigPanel.transform).rect;
+        float side = Mathf.Min(pr.width, pr.height) * autoBigMapRatio;
+        if (side > 1f) bigMap.rectTransform.sizeDelta = new Vector2(side, side);
+    }
+
+    static RectTransform NewUI(string name, Transform parent)
+    {
+        var go = new GameObject(name, typeof(RectTransform));
+        go.transform.SetParent(parent, false);
+        return (RectTransform)go.transform;
+    }
+
+    static void Stretch(RectTransform rt)
+    {
+        rt.anchorMin = Vector2.zero; rt.anchorMax = Vector2.one;
+        rt.offsetMin = rt.offsetMax = Vector2.zero;
+        rt.pivot = new Vector2(0.5f, 0.5f);
     }
 
     void OnDestroy()

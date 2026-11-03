@@ -7,7 +7,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "NeonRider/Store", fileName = "Store_")]
 public class StoreData : ScriptableObject
 {
+    [Tooltip("고정 ID. 엑셀(DeliveryData.xlsx) Stores 탭의 id. 한번 정하면 바꾸지 않기")]
+    public string id = "";
     public string storeName = "피탕김탕";
+    [Tooltip("끄면 주문이 생기지 않음 (엑셀 available)")]
+    public bool available = true;
     public FoodData[] menu;
 
     public FoodData RandomFood()

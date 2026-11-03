@@ -21,6 +21,12 @@ public class DeliveryPoint : MonoBehaviour
     [SerializeField] StoreData store;
     [Tooltip("배달 지점 이름 (예: 대전지방법원 공주지원)")]
     [SerializeField] string displayName = "";
+    [Tooltip("고정 ID. 엑셀 Destinations 탭의 dp_id와 매칭 (예: BLOCK013-01). 비어 있으면 가져오기 때 자동으로 채움")]
+    [SerializeField] string dpId = "";
+    [Tooltip("주소 (엑셀에서 가져옴)")]
+    [SerializeField] string address = "";
+    [Tooltip("분류 (Residential / Commercial / Office / Landmark 등, 엑셀에서 가져옴)")]
+    [SerializeField] string category = "";
     [SerializeField] Transform entrance;
 
     [Header("Minimap")]
@@ -42,6 +48,9 @@ public class DeliveryPoint : MonoBehaviour
     public StoreData Store => store;
     public string DisplayName => !string.IsNullOrEmpty(displayName) ? displayName
                                : store != null ? store.storeName : name;
+    public string DpId => dpId;
+    public string Address => address;
+    public string Category => category;
     public Vector3 EntrancePosition => entrance ? entrance.position : transform.position;
     public Color ThemeColor => type == DeliveryPointType.Pickup ? pickupColor : dropoffColor;
 

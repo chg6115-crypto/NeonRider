@@ -42,6 +42,15 @@ public class DeliveryRules
         return basePay + steps * payPer100m;
     }
 
+    /// <summary>음식 배달비 배율까지 반영한 기본 배달비</summary>
+    public int BaseFor(float distanceMeters, FoodData food) =>
+        Mathf.RoundToInt(BaseFor(distanceMeters) * (food != null ? food.payMultiplier : 1f));
+
+    /// <summary>등급 보너스 + 음식 배달비 배율 반영</summary>
+    public int PayFor(float distanceMeters, DeliveryGrade grade, FoodData food) =>
+        grade == DeliveryGrade.Failed ? 0
+        : Mathf.RoundToInt(PayFor(distanceMeters, grade) * (food != null ? food.payMultiplier : 1f));
+
     public int PayFor(float distanceMeters, DeliveryGrade grade)
     {
         if (grade == DeliveryGrade.Failed) return 0;
