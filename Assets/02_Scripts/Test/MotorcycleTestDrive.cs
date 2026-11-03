@@ -418,7 +418,7 @@ public class MotorcycleTestDrive : MonoBehaviour
         v = 0f; h = 0f; boost = false; brakeKey = false;
 #if ENABLE_INPUT_SYSTEM
         var kb = Keyboard.current;
-        if (kb == null) return;
+        if (kb == null || GameInputBlock.Blocked) return;   // 콜 메뉴 등이 열려 있으면 조작 막음
         if (kb.wKey.isPressed || kb.upArrowKey.isPressed) v += 1f;
         if (kb.sKey.isPressed || kb.downArrowKey.isPressed) v -= 1f;
         if (kb.dKey.isPressed || kb.rightArrowKey.isPressed) h += 1f;

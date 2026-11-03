@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoodData
   id: food_bulnak
   displayName: "\uBD88\uB099"
-  freshnessLossPerMinute: 0.6
-  impactSensitivity: 1.5
+  freshness: 1
+  impact: 2
+  basePay: 0
   payMultiplier: 1

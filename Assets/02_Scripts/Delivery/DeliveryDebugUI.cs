@@ -33,13 +33,13 @@ public class DeliveryDebugUI : MonoBehaviour
             else if (inside && riding) s += "오토바이에서 내려야 해요 (F)\n";
             else s += $"<size=12>영역 밖  (목적지까지 {Vector3.Distance(rider.transform.position, o.Target.transform.position):0.0}m)</size>\n";
         }
-        else s += "다음 주문 대기 중...\n";
+        else s += CallManager.Instance != null ? $"콜 {CallManager.Instance.Calls.Count}건 대기 중  [Q]로 수락\n" : "다음 주문 대기 중...\n";
 
         if (m.LastResult is DeliveryResult r)
             s += $"\n지난 배달: {r.grade}  신선도 {r.freshnessPoints} / 형태 {r.shapePoints}  +{r.pay:N0}원\n\"{r.reaction}\"";
 
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-        if (m.DebugKeysEnabled) s += "\n<size=12><color=#AAAAAA>[F9] 단계 완료  [F10] 배달 완료  [F11] 새 주문  [M] 전체 지도</color></size>";
+        if (m.DebugKeysEnabled) s += "\n<size=12><color=#AAAAAA>[Q] 콜  [F9] 단계 완료  [F10] 배달 완료  [F11] 새 콜/주문  [M] 전체 지도</color></size>";
 #endif
         GUI.Box(new Rect(12, 12, 460, 230), s, style);
     }

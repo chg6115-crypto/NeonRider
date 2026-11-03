@@ -74,9 +74,12 @@ public class DeliveryManager : MonoBehaviour
     void OnDisable() { if (bike != null) bike.Landed -= OnBikeLanded; }
     void OnDestroy() { if (Instance == this) Instance = null; }
 
+    /// <summary>콜 시스템(CallManager)이 있으면 자동 주문 대신 콜 수락으로 주문이 시작됨</summary>
+    bool UseCalls => CallManager.Instance != null && CallManager.Instance.isActiveAndEnabled;
+
     void Start()
     {
-        if (autoCreateOrders) CreateRandomOrder();
+        if (autoCreateOrders && !UseCalls) CreateRandomOrder();
     }
 
     void Update()
@@ -85,7 +88,7 @@ public class DeliveryManager : MonoBehaviour
         HandleDebugKeys();
 
         // 다음 주문 대기
-        if (CurrentOrder == null && autoCreateOrders && nextOrderTimer >= 0f)
+        if (CurrentOrder == null && autoCreateOrders && !UseCalls && nextOrderTimer >= 0f)
         {
             nextOrderTimer -= dt;
             if (nextOrderTimer < 0f) CreateRandomOrder();
@@ -100,7 +103,7 @@ public class DeliveryManager : MonoBehaviour
 
         // E 홀드 상호작용
         var target = o.Target;
-        bool canInteract = target != null && target.IsOnFootInside(rider);
+        bool canInteract = target != null && !GameInputBlock.Blocked && target.IsOnFootInside(rider);
         if (canInteract && InteractHeld())
         {
             holdTimer += dt;
@@ -120,6 +123,15 @@ public class DeliveryManager : MonoBehaviour
     // ---------------- 주문 ----------------
     public bool CreateRandomOrder()
     {
+        if (!TryPickRoute(out var store, out var dest, out var food)) return false;
+        StartOrder(new Order(store, dest, food));
+        return true;
+    }
+
+    /// <summary>랜덤 가게·목적지·음식 고르기 (자동 주문, 콜 생성에서 공용)</summary>
+    public bool TryPickRoute(out DeliveryPoint store, out DeliveryPoint dest, out FoodData food)
+    {
+        store = null; dest = null; food = null;
         var pickups = DeliveryPoint.All.Where(p => p.Type == DeliveryPointType.Pickup && p.Store != null && p.Store.available && p.Store.menu != null && p.Store.menu.Length > 0).ToList();
         var drops = DeliveryPoint.All.Where(p => p.Type == DeliveryPointType.Dropoff).ToList();
         if (pickups.Count == 0 || drops.Count == 0)
@@ -128,12 +140,12 @@ public class DeliveryManager : MonoBehaviour
             return false;
         }
 
-        var store = pickups[UnityEngine.Random.Range(0, pickups.Count)];
-        var candidates = drops.Where(d => Vector3.Distance(d.EntrancePosition, store.EntrancePosition) >= minDistance).ToList();
+        var s = pickups[UnityEngine.Random.Range(0, pickups.Count)];
+        var candidates = drops.Where(d => Vector3.Distance(d.EntrancePosition, s.EntrancePosition) >= minDistance).ToList();
         if (candidates.Count == 0) candidates = drops;
-        var dest = candidates[UnityEngine.Random.Range(0, candidates.Count)];
-
-        StartOrder(new Order(store, dest, store.Store.RandomFood()));
+        store = s;
+        dest = candidates[UnityEngine.Random.Range(0, candidates.Count)];
+        food = s.Store.RandomFood();
         return true;
     }
 
@@ -180,7 +192,7 @@ public class DeliveryManager : MonoBehaviour
         Delivered?.Invoke(result);
         MoneyChanged?.Invoke(Money);
 
-        if (autoCreateOrders) nextOrderTimer = nextOrderDelay;
+        if (autoCreateOrders && !UseCalls) nextOrderTimer = nextOrderDelay;
     }
 
     void RefreshBeacons()
@@ -211,7 +223,7 @@ public class DeliveryManager : MonoBehaviour
     public void DebugCompleteStep()
     {
         var o = CurrentOrder;
-        if (o == null) { CreateRandomOrder(); return; }
+        if (o == null) { if (UseCalls) CallManager.Instance.SpawnCall(); else CreateRandomOrder(); return; }
         ResetHold();
         if (o.State == OrderState.Accepted) DoPickup(o);
         else if (o.State == OrderState.PickedUp) DoDeliver(o);
@@ -238,14 +250,15 @@ public class DeliveryManager : MonoBehaviour
             RefreshBeacons();
         }
         ResetHold();
-        CreateRandomOrder();
+        if (UseCalls) CallManager.Instance.SpawnCall();   // 콜 모드: 콜 하나 추가 (Q로 수락)
+        else CreateRandomOrder();
     }
 
     void HandleDebugKeys()
     {
 #if (UNITY_EDITOR || DEVELOPMENT_BUILD) && ENABLE_INPUT_SYSTEM
         var kb = Keyboard.current;
-        if (!debugKeys || kb == null) return;
+        if (!debugKeys || kb == null || GameInputBlock.Blocked) return;
         if (kb.f9Key.wasPressedThisFrame) DebugCompleteStep();
         if (kb.f10Key.wasPressedThisFrame) DebugCompleteOrder();
         if (kb.f11Key.wasPressedThisFrame) DebugNewOrder();

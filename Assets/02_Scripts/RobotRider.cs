@@ -157,7 +157,7 @@ public class RobotRider : MonoBehaviour
     bool MountKeyPressed()
     {
 #if ENABLE_INPUT_SYSTEM
-        return Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame;
+        return Keyboard.current != null && !GameInputBlock.Blocked && Keyboard.current.fKey.wasPressedThisFrame;
 #else
         return false;
 #endif

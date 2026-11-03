@@ -42,14 +42,27 @@ public class DeliveryRules
         return basePay + steps * payPer100m;
     }
 
-    /// <summary>음식 배달비 배율까지 반영한 기본 배달비</summary>
-    public int BaseFor(float distanceMeters, FoodData food) =>
-        Mathf.RoundToInt(BaseFor(distanceMeters) * (food != null ? food.payMultiplier : 1f));
+    /// <summary>
+    /// 음식까지 반영한 기본 배달비 = (음식 기본 배달비, 없으면 basePay) + 거리 추가분 → × 음식 배달비 배율
+    /// </summary>
+    public int BaseFor(float distanceMeters, FoodData food)
+    {
+        int steps = Mathf.FloorToInt(Mathf.Max(0f, distanceMeters) / 100f);
+        int start = food != null && food.basePay > 0 ? food.basePay : basePay;
+        float mul = food != null ? food.payMultiplier : 1f;
+        return Mathf.RoundToInt((start + steps * payPer100m) * mul);
+    }
 
-    /// <summary>등급 보너스 + 음식 배달비 배율 반영</summary>
-    public int PayFor(float distanceMeters, DeliveryGrade grade, FoodData food) =>
-        grade == DeliveryGrade.Failed ? 0
-        : Mathf.RoundToInt(PayFor(distanceMeters, grade) * (food != null ? food.payMultiplier : 1f));
+    /// <summary>음식 반영 기본 배달비 × 등급 보너스</summary>
+    public int PayFor(float distanceMeters, DeliveryGrade grade, FoodData food)
+    {
+        if (grade == DeliveryGrade.Failed) return 0;
+        return Mathf.RoundToInt(BaseFor(distanceMeters, food) * GradeMultiplier(grade));
+    }
+
+    float GradeMultiplier(DeliveryGrade grade) =>
+        grade == DeliveryGrade.Perfect || grade == DeliveryGrade.Great ? bonusAt9
+        : grade == DeliveryGrade.Good ? bonusAt8 : 1f;
 
     public int PayFor(float distanceMeters, DeliveryGrade grade)
     {

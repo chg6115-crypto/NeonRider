@@ -1,5 +1,6 @@
-﻿id,store_id,name,freshness_loss_per_min,impact_sensitivity,pay_multiplier,note
-food_burger_set,store_burgerwang,햄버거세트,0.5,1,1,
-food_icecream,store_burgerwang,아이스크림,1,2,1.5,"녹음 → 4분 뒤 1점, 충격 2배"
-food_pitang,store_pitang,피탕,0.71,1,1,
-food_bulnak,store_samhui,불낙,0.6,1.5,1,국물 → 충격에 약함
+﻿id,store_id,name,freshness,impact,base_pay,pay_multiplier,note
+food_burger_set,store_burgerwang,햄버거세트,보통,보통,,1,
+food_icecream,store_burgerwang,아이스크림,매우높음,매우높음,,1.5,"녹음 → 4분 뒤 1점, 충격 2배"
+food_pitang,store_pitang,피탕,높음,보통,,1,
+food_bulnak,store_samhui,불낙,보통,높음,,1,국물 → 충격에 약함
+food_cafe_drink,store_cafe,카페 음료,높음,낮음,2500,1,"식으면/녹으면 맛이 떨어짐, 쏟아짐은 거의 없음 (뚜껑)"

@@ -112,8 +112,9 @@ public static class DeliveryDataImporter
             string before = Snapshot(f);
             f.id = id;
             f.displayName = string.IsNullOrEmpty(name) ? id : name;
-            f.freshnessLossPerMinute = row.Float("freshness_loss_per_min", f.freshnessLossPerMinute, warn);
-            f.impactSensitivity = row.Float("impact_sensitivity", f.impactSensitivity, warn);
+            f.freshness = row.Tier("freshness", f.freshness, warn);
+            f.impact = row.Tier("impact", f.impact, warn);
+            f.basePay = Mathf.RoundToInt(row.Float("base_pay", f.basePay, warn));
             f.payMultiplier = row.Float("pay_multiplier", f.payMultiplier, warn);
             foodById[id] = f;
             Note(log, created, before, Snapshot(f), "Food", id, f);
@@ -271,6 +272,15 @@ public static class DeliveryDataImporter
             if (v == "") return def;
             return v == "TRUE" || v == "1" || v == "Y" || v == "YES" || v == "O";
         }
+        public FoodSensitivity Tier(string key, FoodSensitivity def, StringBuilder warn)
+        {
+            string v = Get(key);
+            if (v == "") return def;
+            if (FoodSensitivityTable.TryParse(v, out var s)) return s;
+            warn.AppendLine($"행 {Line}: {key} 값 '{v}'는 낮음/보통/높음/매우높음 중 하나여야 함 → 기존 값 유지");
+            return def;
+        }
+
         public float Float(string key, float def, StringBuilder warn)
         {
             string v = Get(key);
@@ -325,7 +335,7 @@ public static class DeliveryDataImporter
     }
 
     static string Snapshot(StoreData s) => $"{s.id}|{s.storeName}|{s.available}";
-    static string Snapshot(FoodData f) => $"{f.id}|{f.displayName}|{f.freshnessLossPerMinute}|{f.impactSensitivity}|{f.payMultiplier}";
+    static string Snapshot(FoodData f) => $"{f.id}|{f.displayName}|{f.freshness}|{f.impact}|{f.basePay}|{f.payMultiplier}";
 
     static void Note(StringBuilder log, bool created, string before, string after, string kind, string id, UnityEngine.Object asset)
     {

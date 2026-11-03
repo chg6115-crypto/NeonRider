@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoodData
   id: food_icecream
   displayName: "\uC544\uC774\uC2A4\uD06C\uB9BC"
-  freshnessLossPerMinute: 1
-  impactSensitivity: 2
+  freshness: 3
+  impact: 3
+  basePay: 0
   payMultiplier: 1.5

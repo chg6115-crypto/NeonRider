@@ -92,6 +92,16 @@ namespace Invector.vCharacterController
 
         protected virtual void InputHandle()
         {
+            // NeonRider: 콜 메뉴 등이 열려 있으면 이동·카메라·점프 입력만 0으로.
+            // 모터와 애니메이터는 계속 돌아서 하던 동작(점프 착지, 감속)이 자연스럽게 마무리됨
+            if (GameInputBlock.Blocked)
+            {
+                cc.input = Vector3.zero;
+                if (cc.isSprinting) cc.Sprint(false);
+                if (cameraMain) cc.UpdateMoveDirection(cameraMain.transform);
+                return;
+            }
+
             MoveInput();
             CameraInput();
             SprintInput();

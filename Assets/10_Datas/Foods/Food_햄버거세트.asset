@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoodData
   id: food_burger_set
   displayName: "\uD584\uBC84\uAC70\uC138\uD2B8"
-  freshnessLossPerMinute: 0.5
-  impactSensitivity: 1
+  freshness: 1
+  impact: 1
+  basePay: 0
   payMultiplier: 1

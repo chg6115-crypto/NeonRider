@@ -1,9 +1,9 @@
 ﻿dp_id,display_name,address,category,note
 DP_Court,대전지방법원 공주지원,,Landmark,
-BLOCK010-01,BLOCK010-01,,Residential,Apartment13_03
-BLOCK013-01,BLOCK013-01,,Residential,Apartment13_01
-BLOCK020-01,BLOCK020-01,,Residential,Apartment13_02
-BLOCK047-01,BLOCK047-01,,Residential,Apartment13_04
-BLOCK047-02,BLOCK047-02,,Residential,Apartment13_05
-BLOCK061-01,BLOCK061-01,,Residential,USA_Terrace
-BLOCK061-02,BLOCK061-02,,Residential,Apartment13_06
+GH011-01,GH011-01,,Residential,Apartment13_03
+GH014-01,GH014-01,,Residential,Apartment13_01
+GH019-01,GH019-01,,Residential,Apartment13_02
+SG030-01,SG030-01,,Residential,Apartment13_04
+SG030-02,SG030-02,,Residential,Apartment13_05
+SG044-01,SG044-01,,Residential,USA_Terrace
+SG044-02,SG044-02,,Residential,Apartment13_06

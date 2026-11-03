@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoodData
   id: food_pitang
   displayName: "\uD53C\uD0D5"
-  freshnessLossPerMinute: 0.71
-  impactSensitivity: 1
+  freshness: 2
+  impact: 1
+  basePay: 0
   payMultiplier: 1
